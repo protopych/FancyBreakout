@@ -88,7 +88,7 @@ class Brick:
         self.color = color
         
     def collision(self, ball: Ball):
-        if (ball.x >= self.x and ball.x <= self.x + self.width) and ball.y <= self.y - ball.size:
+        if (ball.x >= self.x - ball.size and ball.x <= self.x + self.width + ball.size) and ball.y <= self.y + self.height - ball.size:
             ball.vecY *= -1
             return True
         
